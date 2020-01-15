@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Visualization</title>
+		<script type="text/javascript" src="http://d3js.org/d3.v3.min.js"></script>
+		<script type="text/javascript" src="http://d3js.org/queue.v1.min.js"></script>
+		<script type="text/javascript" src="http://d3js.org/topojson.v1.min.js"></script>
+		<script type="text/javascript" src="chroniton.js"></script>
+		<script type="text/javascript" src="./node_modules/textures/dist/textures.js"></script>
+		<link href="chroniton.css" rel="stylesheet">
+	</head>
+	<style>
+
+		body {
+		 	font-family: sans-serif;
+		}
+
+		.key {
+			font: 11px sans-serif;
+		}
+
+		.summary {
+			font: 13px sans-serif;
+			width: 900px;
+		}
+
+		.county {
+		 	font: 14px sans-serif;
+		 	font-weight: bold;
+		}
+
+		.state {
+		  fill: none;
+		  stroke: #fff;
+		  stroke-linejoin: round;
+		  stroke-width: 2px;
+		}
+
+		#slider {
+			position: relative;
+			margin-left: 150px;
+			bottom: -15px;
+		}
+
+		svg {
+			display: inline;
+		}
+
+		div.tooltip {
+		 	position: absolute;
+		 	left: 75px;
+		 	text-align: center;
+		 	height: 16px;
+		 	padding: 10px;
+		 	font-size: 14px;
+		 	background: #FFFFFF;
+		 	border: 1px solid #989898;
+	 		pointer-events: none;
+	 		border-radius: 15px;
+		}
+
+
+		@media (max-width: 400px) {
+	    .d3map {
+	        display: none;
+	    }
+
+
+	}
+	</style>
+
+	<body>
+		<h2>P-Value Heatmap</h2>
+		<script type="text/javascript" src="vis.js"></script>
+		<div id="slider"></div>
+		<br/>
+		<p class='summary'>
+			This heatmap displays the p-values for each corresponding feature and event.
+		</p>
+		<p class='summary'>
+			Hover over specific data point to get more information.
+		</p>
+<!-- 		<p class='summary'>Sources: <a href='https://www.cdc.gov/diabetes/data/countydata/countydataindicators.html'>CDC county-level diabetes dataset</a>, <a href='https://apps.bea.gov/regional/histdata/'>U.S. Dept. of Commerce historical data</a></p> -->
+	</body>
+</html>
